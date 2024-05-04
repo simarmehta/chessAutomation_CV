@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Board Viewer</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #5d534a; 
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            animation: spin 2s linear infinite;
+            position: fixed; /* Fixed position */
+            left: 50%; 
+            top: 10px; 
+            transform: translateX(-50%);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <script>
+        function showSpinner() {
+            document.getElementById('spinner').style.display = 'block';
+        }
+
+        window.onload = function() {
+            document.getElementById('spinner').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>IdentifyChess - Chess Board Analyzer</h1>
+    </div>
+    
+    <div class="container">
+        <div class="board-container">
+            {{ board_svg|safe }}
+            {% if image_path %}
+                <img src="{{ image_path }}" alt="Initial Chess Position" style="max-width: 100%; height: auto;">
+            {% endif %}
+        </div>
+        <div class="info-container">
+            <h1>Chess Game Controls</h1>
+            
+            <form action="/" method="post">
+                <!-- <form action="/" method="post"> -->
+                <input type="checkbox" id="rotate" name="rotate" {{ 'checked' if rotate_value else '' }}>
+                <label for="rotate">Rotate</label>
+                <input type="submit" name="initialize" value="Initialize">
+            </form>
+            <form action="/" method="post" onsubmit="showSpinner()">
+                
+                <input type="text" id="move" name="move">
+                <input type="submit" value="Next Move">
+            </form>
+            <form action="/reset-stock" method="post">
+                <input type="submit" value="Reset Board to Initial Position">
+            </form>
+            <div id="move-time">
+                {% if elapsed_time %}
+                    Time Elapsed for Move: {{ "%.2f"|format(elapsed_time) }} seconds
+                {% else %}
+                    Time Elapsed for Move: No moves yet
+                {% endif %}
+            </div>
+        </div>
+        
+    </div>
+    <div id="spinner">
+        <div class="loader"></div>
+    </div>
+</body>
+</html>
+
+

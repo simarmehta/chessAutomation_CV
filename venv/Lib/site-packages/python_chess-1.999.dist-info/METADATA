@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: python-chess
+Version: 1.999
+Summary: A chess library with move generation, move validation, and support for common formats.
+Home-page: https://github.com/niklasf/python-chess
+Author: Niklas Fiekas
+Author-email: niklas.fiekas@backscattering.de
+License: GPL-3.0+
+Project-URL: Documentation, https://python-chess.readthedocs.io
+Keywords: chess fen epd pgn polyglot syzygy gaviota uci xboard
+Platform: UNKNOWN
+Classifier: Development Status :: 7 - Inactive
+Description-Content-Type: text/x-rst
+Requires-Dist: chess (<2,>=1)
+
+python-chess
+============
+
+Package moved
+-------------
+
+This package has been moved to https://pypi.org/project/chess/.
+
+Thanks to `Kristian Glass <https://github.com/doismellburning>`_ for making
+the package name available.
+
+

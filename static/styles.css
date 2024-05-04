@@ -1,0 +1,146 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f3; /* Light cream background for the whole page */
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    height: auto; /* Adjust height automatically */
+    padding: 20px;
+    justify-content: center; /* Center horizontally */
+    gap: 20px; /* Space between containers */
+}
+
+/* Board Container */
+.board-container {
+    flex-basis: 600px; /* Adjust width for the chessboard container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #efe0d1; /* Light brown background */
+    border: 5px solid #b58863; /* Darker brown border */
+    border-radius: 8px;
+}
+
+/* Info Container */
+.info-container {
+    flex-basis: 600px; /* Adjust width for the info container */
+    background-color: #ebf5ee; /* Light green background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Typography */
+h1 {
+    font-family: 'Trebuchet MS', Helvetica, sans-serif; /* Change to a more stylish font */
+    font-size: 28px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    color: #5d534a; /* Dark brown color for text */
+    margin-bottom: 20px;
+    text-align: center; 
+     /* Center the heading */
+}
+
+/* Form Styles */
+form {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #4a766e; /* Dark green color for labels */
+}
+
+input[type="text"], input[type="submit"], input[type="checkbox"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+input[type="text"] {
+    background-color: #fff;
+}
+
+input[type="submit"] {
+    padding: 15px; /* Larger padding for bigger buttons */
+    font-size: 16px; /* Larger font size for text inside the buttons */
+    margin-bottom: 25px;
+    background-color: #6b8f71; /* Dark green button */
+    color: white;
+    cursor: pointer;
+    border: none; /* Remove default border */
+}
+
+input[type="submit"]:hover {
+
+    background-color: #597a5f; /* Slightly darker green for hover */
+}
+
+/* Loader Styles */
+.loader {
+    border-top: 16px solid #6b8f71; /* Dark green to match the button */
+}
+
+form {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align form elements to the center */
+}
+
+/* Rotate Checkbox and Label Style */
+.rotate-checkbox-container {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    margin-bottom: 15px; /* Spacing below the checkbox container */
+}
+
+.rotate-checkbox-container label {
+    margin-left: 10px; /* Space between checkbox and label */
+}
+/* Header Styles */
+.header {
+    padding: 20px;
+    text-align: center; /* Center the content */
+    background-color: #f4f4f3; /* Match the page background */
+    margin-bottom: 20px; /* Add some space before the containers */
+}
+#move-time {
+    text-align: center; /* Center the text */
+    font-size: 18px; /* Optionally increase the font size */
+    padding-top: 10px; /* Add some padding to the top */
+    margin-top: 20px; /* Add some margin to the top */
+    border-top: 1px solid #ccc; /* Add a separator line */
+}
+
+
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .board-container,
+    .info-container {
+        flex-basis: auto; /* Take full width on small screens */
+        width: 100%;
+        margin-bottom: 20px; /* Add space between containers */
+    }
+}
